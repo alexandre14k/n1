@@ -1,0 +1,36 @@
+[package]
+name = "n1"
+version = "1.0.0"
+authors = ["alexander14k28@gmail.com"]
+edition = "2021"
+license = "BSD-3-Clause"
+build = "src/link/build.rs"
+
+[[bin]]
+name = "n1"
+path = "src/main.rs"
+test = false
+bench = false
+
+[features]
+default = ["lpc1115"]
+
+lpc111x = []
+
+lpc1114 = ["lpc111x"]
+lpc1115 = ["lpc111x"]
+
+[profile.dev]
+opt-level = 1
+debug = true
+panic = "abort"
+codegen-units = 1
+lto = false
+
+[profile.release]
+opt-level = "z"
+lto = true
+panic = "abort"
+strip = "debuginfo"
+codegen-units = 1
+rpath = false
