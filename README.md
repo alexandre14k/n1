@@ -70,6 +70,8 @@ or just use `./make.sh` option `s`
 
 Images are exported to `bin/`.
 
+  <img alt="image" src="doc/build-flash-openocd.jpg" /><br>
+
 ## Demo behavior
 
 1. Blue LED blinks 100 ms
@@ -87,7 +89,7 @@ src/app/           state machine, queue, interrupts, pinout
 src/hal/           boot, core registers, drivers
 src/link/          linker script generator and notes
 doc/doc.rst        documentation
-make.sh            build, flash, erase
+make.sh            setup, build, flash, erase
 ```
 
 ## Future development
@@ -95,6 +97,9 @@ make.sh            build, flash, erase
 - Add USART support.
 - The on-board programming probe is an LPC11U35. <br>
   For the virtual COM port (VCP), resistors R29 and R30 must be populated.
+
+  <img alt="image" src="doc/lpc11u35-sch.jpg" /><br>
+  <img alt="image" src="doc/lpc11u35-pcb.png" />
 
 ## Porting
 
